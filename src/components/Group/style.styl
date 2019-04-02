@@ -1,0 +1,118 @@
+@import "../../common/stylus/mixin.styl";
+
+.group
+  container(#fff, 0, 60px)
+  z-index 300
+  font-size 12px
+  .button-tab
+    height 44px
+    padding 0 0.05rem
+    .vux-button-group > a
+      color: #ccc;
+      box-shadow: 0 0 6px 0 rgba(0,0,0,0.06);
+      border-radius: 4px;
+    .vux-button-group > a
+      background-color: #fafafa;
+    .vux-button-group > a.vux-button-group-current
+      background-color: #fff;
+      color: #28b1ea;
+      font-size: 14px;
+    .vux-button-group > a.vux-button-tab-item-first:after
+      border: none;
+    .vux-button-group > a.vux-button-tab-item-last:after
+      border: none;
+  .content-wrapper
+    scroll-wrapper(40px, 60px)
+    .block-content
+      width: 100%;
+      padding: 0.05rem 0.05rem 0 0.05rem;
+      box-sizing: border-box;
+      .content-main
+        background: #fff;
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.10);
+        border-radius: 4px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      .group-content-main
+        height: 1.06rem;
+        .avatar
+          padding: 0 0.05rem;
+          img
+            width: 0.82rem;
+            height: 0.86rem;
+            vertical-align: middle;
+            border-radius: 5px;
+        .info
+          flex: 1;
+          height: 100%;
+          box-sizing: border-box;
+          padding: 0.05rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          .info-item
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items center;
+            .status
+              display: inline-block;
+              height: 0.18rem;
+              line-height: 0.18rem;
+              text-align: center;
+              padding: 0.01rem 0.08rem;
+              background-color: #64c708;
+              border-radius: 0.09rem;
+              color: #fff;
+              opacity: 0.9;
+            .status-disabled
+              background-color: #bcbcbc;
+            .status-activity
+              background-color #ee735c
+            .el-icon-coral-naozhong
+              color: #f5a623;
+            .group-name
+              color: #000;
+              font-weight: 300;
+              line-height: 0.2rem;
+            .el-icon-coral-caiwu-xianxing
+              color: #d0021b;
+      .bill-content-main
+        height: 0.7rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .bill-first-word
+          width: 0.42rem;
+          height: 0.42rem;
+          margin: 0.1rem;
+          line-height: 0.42rem;
+          background-color: #d4e5e0;
+          text-align: center;
+          border-radius: 50%;
+          span
+            color: #fff;
+        .info
+          flex: 1;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          .bill-name
+            color: #000;
+            line-height: 20px;
+          .upload-time
+            color: #9b9b9b;
+            line-height: 16px;
+        .open-btn
+          width: 0.76rem;
+          height: 0.28rem;
+          line-height: 0.28rem;
+          text-align: center;
+          background-color: #3FC6FF;
+          box-shadow: 0 2px 6px 0 rgba(0,0,0,0.10);
+          border-radius: 4px;
+          margin: 0.1rem;
+          span
+            color: #fff;

@@ -1,0 +1,97 @@
+@import "../../common/stylus/mixin.styl";
+
+.group-admin-container
+  container()
+  z-index 300
+  &.slide-enter-active, &.slide-leave-active
+    transition 0.3s
+  &.slide-enter, &.slide-leave-to
+    transform translate3d(100%, 0, 0)
+  .weui-switch:checked,
+  .weui-switch-cp__input:checked ~ .weui-switch-cp__box,
+  .vux-step-item-head-process .vux-step-item-head-inner
+    border-color #3FC6FF
+    background-color #3FC6FF
+  .vux-step-item-title 
+    font-size: 14px;
+  .vux-step-item 
+    line-height: 24px;
+  .vux-check-icon
+    display flex
+    justify-content center
+    span
+      color: #999;
+  .vux-step-item-main
+    background-color #fff !important
+  .step-wrapper
+    position fixed
+    top 60px
+    left 0
+    right 0
+    padding: 0 10px;
+  .content-wrapper
+    scroll-wrapper(90px, 60px)
+    .block-content 
+      width: 100%;
+      padding: 0.05rem 0.05rem 0 0.05rem;
+      box-sizing: border-box;
+      .content-main 
+        background: #fff;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.10);
+        border-radius: 4px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      .cart-content-main 
+        height: 1.1rem;
+        .avatar 
+          padding: 0 0.1rem;
+          img 
+            width: 0.9rem;
+            height: 0.94rem;
+            vertical-align: middle;
+            border-radius: 5px;
+        .info 
+          flex: 1;
+          height: 100%;
+          box-sizing: border-box;
+          padding: 0.1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          .info-item 
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .group-status 
+              display: inline-block;
+              height: 0.18rem;
+              line-height: 0.18rem;
+              text-align: center;
+              padding: 0.01rem 0.08rem;
+              background-color: #64c708;
+              border-radius: 0.09rem;
+              color: #fff;
+              opacity: 0.9;
+            .group-status-disabled 
+              background-color: #bcbcbc;
+            
+            .el-icon-coral-naozhong 
+              color: #f5a623;
+            .group-name 
+              color: #000;
+              font-weight: 300;
+              line-height: 0.2rem;
+            .el-icon-coral-caiwu-xianxing 
+              color: #d0021b;
+            .download 
+              width: 18px;
+              height: 18px;
+    .next-btn-wrapper
+      position fixed
+      left 0.1rem
+      right 0.1rem
+      bottom 0.1rem
+    .no-result-wrapper
+      no-result-wrapper()

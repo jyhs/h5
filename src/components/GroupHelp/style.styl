@@ -1,0 +1,35 @@
+@import "../../common/stylus/mixin.styl";
+
+.group-help-container
+  container()
+  &.slide-enter-active, &.slide-leave-active
+    transition 0.3s
+  &.slide-enter, &.slide-leave-to
+    transform translate3d(100%, 0, 0)
+  ._v-container 
+    margin-top: 1rem;
+  .button-tab
+    padding: 0.05rem 0.05rem 0;
+    margin-top: 0.5rem;
+    .vux-button-group > a 
+      color: #ccc;
+      box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.06);
+      border-radius: 4px;
+    .vux-button-group > a 
+      background-color: #fafafa;
+    .vux-button-group > a.vux-button-group-current 
+      background-color: #fff;
+      color: #28b1ea;
+      font-size: 14px;
+    .vux-button-group > a.vux-button-tab-item-first:after 
+      border: none;
+    .vux-button-group > a.vux-button-tab-item-last:after 
+      border: none;
+  .content-wrapper 
+    scroll-wrapper(100px)
+    .block-content 
+      width: 100%;
+      padding: 0.05rem 0.05rem 0 0.05rem;
+      box-sizing: border-box;
+      img 
+        width: 100%;

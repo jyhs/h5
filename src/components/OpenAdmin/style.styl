@@ -1,0 +1,230 @@
+@import "../../common/stylus/mixin.styl";
+
+.open-admin-container
+  container()
+  z-index 300
+  &.slide-enter-active, &.slide-leave-active
+    transition 0.3s
+  &.slide-enter, &.slide-leave-to
+    transform translate3d(100%, 0, 0)
+  .cube-upload-file-state.cube-upload-file_stat
+    display none
+  .step-wrapper
+    position fixed
+    top 60px
+    left 0
+    right 0
+    padding: 0 20px;
+  .content-wrapper
+    scroll-wrapper(125px, 50px)
+    background-color #fff
+    box-sizing border-box
+    .prompt
+      padding 0 20px
+      margin-top 10px
+      .prompt-content
+        background rgba(0, 130, 213, 0.15)
+        border 1px solid #0082D5
+        border-radius 5px
+        display flex
+        padding 14px 20px
+        .el-icon-coral-prompt_fill
+          color #0082d5
+          margin-right 10px
+        .f12
+          line-height 20px
+          p:nth-of-type(1)
+            color #949494
+          p:nth-of-type(2)
+            font-weight bold
+            span
+              color #f01414
+              font-weight bold
+    .complete
+      margin 60px 0 80px 0
+      padding 0 40px
+      text-align center
+      .el-icon-coral-success_fill
+        font-size 160px
+        color #09bb07
+      .f20
+        text-align center
+        font-weight 600
+        margin-top 15px
+      .f12
+        margin-top 12px
+        color #6c6c6c
+        line-height 24px
+      .btn
+        width 100%
+        display flex
+        justify-content center
+        .text
+          display block
+          width 78px
+          height 30px
+          line-height 30px
+          background: #2689ED;
+          border-radius: 4px;
+          text-align center
+          color #fff
+    .order
+      padding 0 20px
+      margin-top 10px
+      display flex
+      justify-content space-between
+      .no-time
+        line-height 20px
+        .time
+          color #8d8d8d
+      .download
+        width 78px
+        height 30px
+        line-height 30px
+        background: #2689ED;
+        border-radius: 4px;
+        text-align center
+        .text
+          color #fff
+    .carts
+      padding 0 20px
+      .item
+        background: #fff;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.10);
+        border-radius: 4px;
+        margin-top 5px
+        padding 10px
+        display flex
+        flex-direction column
+        .item-main
+          width 100%
+          display flex
+          align-items center
+          .avatar
+            width 60px
+            img
+              width 40px
+              height 40px
+              border-radius 50%
+          .cart-detail
+            flex 1
+            p:nth-of-type(1)
+              color #000
+              line-height 20px
+            p:nth-of-type(2)
+              color #f01414
+              line-height 20px
+          .lost-damage
+            width 46px
+            height 28px
+            line-height 28px
+            border-radius 14px
+            box-shadow 0 2px 6px 0 rgba(0, 0, 0, 0.10)
+            text-align center
+            a
+              color: #FFFFFF;
+              text-align: center;
+            &.lost
+              background #DCD036;
+            &.damage
+              background #FF6969;
+    .user
+      margin-top 10px
+      padding 0 20px
+      display flex
+      .avatar
+        width 60px
+        img
+          width 40px
+          height 40px
+          border-radius 50%
+      .info
+        .f12
+          span
+            color: #8A8A8F;
+            line-height: 16px;
+    .separator
+      white-space nowrap
+      overflow hidden
+      margin-top 10px
+      span
+        display inline-block
+        width 14px
+        height 3px
+        margin-right 3px
+        background-color red
+        transform skewX(-45deg)
+        &:nth-of-type(even)
+          background-color #2689ed
+        &:nth-of-type(odd)
+          background-color #d2335c
+    .input-info
+      padding 10px 20px 0
+      line-height 20px
+      div
+        .cube-input
+          width 80%
+          height 24px
+          .cube-input-field
+            font-size 12px
+        &:last-child
+          display flex
+          input
+            flex 1
+            background #fff
+        span
+          display inline-block
+          &:nth-of-type(1)
+            width 70px
+    .detail
+      padding 0 20px 10px
+      border-bottom 1px solid #E8E8E8
+      div
+        display flex
+        margin-top 10px
+        line-height 16px
+        span
+          &:nth-of-type(1)
+            width 30%
+          &:nth-of-type(2)
+            width 30%
+          &:nth-of-type(3)
+            width 40%
+            text-align right
+          &.freight
+            color #f01414
+    .total
+      padding 15px 20px
+      display flex
+      justify-content space-between
+      border-bottom 1px solid #E8E8E8
+      span
+        width 33.33%
+        &:nth-of-type(1)
+          text-align left
+          font-weight bold
+        &:nth-of-type(2)
+          text-align center
+          font-weight bold
+        &:nth-of-type(3)
+          text-align right
+          color #f01414
+    .upload
+      padding 15px 20px
+      .title
+        margin-bottom 15px
+        color #353535
+        font-weight bold
+  .confirm-btn-wrapper
+    width 100%
+    position fixed
+    bottom 0
+    height 50px
+    line-height 50px
+    background-color #10a327
+    text-align center
+    &.disabled
+      background-color #666
+    .text
+      color #fff
+

@@ -1,0 +1,37 @@
+@import "../../common/stylus/variable";
+
+.tab-bar
+  display: flex
+  height: 60px
+  line-height: 75px
+  font-size: $font-size-small
+  border-top 1px solid #ccc
+  .tab-item
+    flex: 1
+    text-align: center
+    &:nth-child(1)
+      background url("./menu1_off.svg") no-repeat center 2px
+      &.router-link-active
+        background-image url("./menu1_on.svg")
+    &:nth-child(2)
+      background url("./menu2_off.svg") no-repeat center 2px
+      &.router-link-active
+        background-image url("./menu2_on.svg")
+    &:nth-child(3)
+      background url("./menu3_off.svg") no-repeat center 2px
+      &.router-link-active
+        background-image url("./menu3_on.svg")
+    &:nth-child(4)
+      background url("./menu4_off.svg") no-repeat center 2px
+      &.router-link-active
+        background-image url("./menu4_on.svg")
+    &:nth-child(5)
+      background url("./menu5_off.svg") no-repeat center 2px
+      &.router-link-active
+        background-image url("./menu5_on.svg")
+    .tab-link
+      padding-bottom: 5px
+      color: $color-text-l
+    &.router-link-active
+      .tab-link
+        color: $color-text

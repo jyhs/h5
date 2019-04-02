@@ -1,0 +1,49 @@
+@import "../../common/stylus/mixin.styl";
+
+.city-comm-container
+  container()
+  &.slide-enter-active, &.slide-leave-active
+    transition 0.3s
+  &.slide-enter, &.slide-leave-to
+    transform translate3d(100%, 0, 0)
+  .content-wrapper
+    scroll-wrapper()
+    .block-content
+      width: 100%;
+      padding: 0.05rem 0.05rem 0 0.05rem;
+      box-sizing: border-box;
+      .content-main
+        background: #fff;
+        height: 1.06rem;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.10);
+        border-radius: 4px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .avatar
+          padding: 0 0.1rem;
+          img
+            width: 0.82rem;
+            height: 0.86rem;
+            vertical-align: middle;
+            border-radius: 5px;
+        .info
+          flex: 1;
+          height: 100%;
+          box-sizing: border-box;
+          padding: 0.1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          .info-item
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .name
+              color: #000;
+              font-weight: 300;
+              line-height: 0.2rem;
+              display: flex;
+              flex-direction: row;
+    .no-result-wrapper
+      no-result-wrapper()

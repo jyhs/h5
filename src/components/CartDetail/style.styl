@@ -1,0 +1,81 @@
+@import "../../common/stylus/mixin.styl";
+
+.cart-detail-container
+  container()
+  z-index 400
+  &.slide-enter-active, &.slide-leave-active
+    transition 0.3s
+  &.slide-enter, &.slide-leave-to
+    transform translate3d(100%, 0, 0)
+  .content-wrapper
+    scroll-wrapper()
+    bottom 56px
+    padding 0 0.05rem
+    .block-content 
+      height: 1rem;
+      background-color: #fff;
+      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.10);
+      border-radius: 4px;
+      padding: 0.05rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .weui-cell 
+        padding: 0;
+      .weui-cell:before 
+        border: none;
+      .vux-number-input 
+        font-size: 15px;
+      .img-container 
+        width: 1.25rem;
+        height: 0.8rem;
+        border-radius: 0.05rem;
+        overflow: hidden;
+        img 
+          width: 1.25rem;
+          height: 0.8rem;
+          vertical-align: middle;
+      .info
+        padding 0.05rem 0
+        box-sizing border-box
+        flex: 1;
+        height: 100%;
+        margin-left: 0.1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .name 
+          color: #4a4a4a;
+          line-height: 30px;
+        div 
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .size 
+            color: #8a8a8a;
+            line-height: 20px;
+          .price 
+            color: #ff9f00;
+            line-height: 20px;
+  .total-count 
+    line-height: 0.3rem;
+    .title
+      color: #4a4a4a;
+    .count 
+      color: #ee753c;
+  .submit 
+    width: 100%;
+    padding: 0.1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    box-sizing border-box;
+    .btn 
+      background-color: #0bb20c;
+      height: 0.43rem;
+      color: #fff;
+      width: 3.55rem !important;
+    .btn-disabled 
+      background-color: #999;

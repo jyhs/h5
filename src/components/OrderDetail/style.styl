@@ -1,0 +1,97 @@
+@import "../../common/stylus/mixin.styl";
+
+.order-detail-container
+  container()
+  z-index 400
+  &.slide-enter-active, &.slide-leave-active
+    transition 0.3s
+  &.slide-enter, &.slide-leave-to
+    transform translate3d(100%, 0, 0)
+  .content-wrapper
+    scroll-wrapper()
+    padding 0 0.1rem
+    display flex
+    flex-direction column
+    .group-info
+      height 0.9rem
+      .group-opener
+        display flex
+        padding-top 0.1rem
+        color #a3a3a3
+        img
+          width 0.4rem
+          height 0.4rem
+          border-radius 0.03rem
+        .group-opener-info
+          margin-left 0.16rem
+          display flex
+          flex-direction column
+          justify-content space-between
+      .group-more
+        margin-top 0.05rem
+        height 0.3rem
+        line-height 0.3rem
+        display flex
+        justify-content space-between
+        border-bottom 1px solid #e8e8e8
+        .order-no
+          color #484848
+        .time
+          color #8d8d8d
+    .ency
+      flex 1
+      overflow hidden
+      .ency-item
+        margin-top 0.15rem
+        display flex
+        img
+          width 0.66rem
+          height 0.48rem
+          border-radius 0.05rem
+        .ency-info
+          margin-left 0.09rem
+          flex 1
+          display flex
+          flex-direction column
+          justify-content space-between
+          .ency-info-detail
+            display flex
+            .name
+              width 50%
+              no-wrap()
+            .size
+              width 30%
+              color #ababab
+            .price
+              width 20%
+              text-align right
+              color #333
+    .statistics
+      height 1.3rem
+      .detail
+        padding-bottom 0.06rem
+        border-bottom 1px solid #ececec
+        .item
+          height 0.2rem
+          line-height 0.2rem
+          display flex
+          color #353535
+          &:nth-last-child(2)
+            color #00a0dc
+          &:last-child
+            color #f00
+          span
+            width 33.33%
+            &:first-child
+              text-align left
+            &:nth-of-type(2)
+              text-align center
+            &:last-child
+              text-align right
+      .total
+        margin-top 0.12rem
+        display flex
+        justify-content space-between
+        color #353535
+        .count
+          color #f01414

@@ -1,0 +1,47 @@
+@import "../../common/stylus/variable.styl";
+@import "../../common/stylus/mixin.styl";
+
+.dialog
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  z-index: 998
+  background-color: $color-background-d
+  .icon
+    width 40px
+    height 40px
+    position absolute
+    right 10px
+    top 10px
+    font-size 40px
+    color $color-text-d
+  &.dialog-fade-enter-active
+    animation: dialog-fadein 0.3s
+    .dialog-content
+      animation: dialog-zoom 0.3s
+  .dialog-wrapper
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    overflow hidden
+    z-index: 999
+    .dialog-content
+      width 300px
+      border-radius $border-radius
+      background $color-background
+      overflow hidden
+@keyframes dialog-fadein
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+@keyframes dialog-zoom
+  0%
+    transform: scale(0)
+  50%
+    transform: scale(1.1)
+  100%
+    transform: scale(1)

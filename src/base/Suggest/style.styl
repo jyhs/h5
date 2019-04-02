@@ -1,0 +1,39 @@
+@import "../../common/stylus/variable";
+@import "../../common/stylus/mixin";
+
+.suggest
+  height: 100%
+  overflow: hidden
+  .suggest-list
+    padding: 0 0.2rem
+    .suggest-item
+      height 40px
+      line-height 40px
+      border-1px(rgba(7, 17, 27, 0.1))
+      display flex
+      flex-direction row
+      .type
+        width 20px
+      .name
+        width 120px
+        font-size: $font-size-medium
+        color: $color-text-d
+        overflow: hidden
+        .text
+          width 100px
+          color $color-text-l
+          no-wrap()
+      .tags
+        flex 1
+        text-align right
+        .tag
+          background #eee
+          padding 3px 6px
+          border-radius 4px
+          color #333
+          margin-right 3px
+  .no-result-wrapper
+    position: absolute
+    width: 100%
+    top: 50%
+    transform: translateY(-100%)

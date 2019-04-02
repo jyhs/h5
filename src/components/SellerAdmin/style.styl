@@ -1,0 +1,225 @@
+@import "../../common/stylus/mixin.styl";
+
+.seller-admin-container
+  container()
+  z-index 300
+  &.slide-enter-active, &.slide-leave-active
+    transition 0.3s
+  &.slide-enter, &.slide-leave-to
+    transform translate3d(100%, 0, 0)
+  .step-wrapper
+    position fixed
+    top 60px
+    left 0
+    right 0
+    padding: 0 20px;
+  .content-wrapper
+    scroll-wrapper(125px, 50px)
+    background-color #fff
+    box-sizing border-box
+    .big-info
+      margin-top 15px
+      font-size 12px
+      color #6c6c6c
+      text-align center
+      p
+        margin-bottom 15px
+        &:nth-of-type(1)
+          font-size 20px
+    .prompt
+      padding 0 20px
+      .prompt-content
+        background rgba(0,130,213,0.15)
+        border 1px solid #0082D5
+        border-radius 5px
+        display flex
+        padding 14px 20px
+        .el-icon-coral-prompt_fill
+          color #0082d5
+          margin-right 10px
+        .f12
+          line-height 20px
+          p:nth-of-type(1)
+            color #949494
+          p:nth-of-type(2)
+            font-weight bold
+            span
+              color #f01414
+              font-weight bold
+    .complete
+      margin 10px 0 80px 0
+      padding 0 40px
+      text-align center
+      .el-icon-coral-success_fill
+        font-size 160px
+        color #09bb07
+      .f20
+        font-weight 600
+        margin-top 15px
+      .f12
+        margin-top 12px
+        color #6c6c6c
+        line-height 24px
+      .btn
+        width 100%
+        display flex
+        justify-content center
+        .text
+          display block
+          width 78px
+          height 30px
+          line-height 30px
+          background: #2689ED;
+          border-radius: 4px;
+          text-align center
+          color #fff
+    .order
+      padding 0 20px
+      margin-top 10px
+      display flex
+      justify-content space-between
+      .no-time
+        line-height 20px
+        .time
+          color #8d8d8d
+      .download
+        width 78px
+        height 30px
+        line-height 30px
+        background: #2689ED;
+        border-radius: 4px;
+        text-align center
+        .text
+          color #fff
+    .carts
+      padding 0 20px
+      .item
+        background: #fff;
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.10);
+        border-radius: 4px;
+        margin-top 5px
+        padding 10px
+        display flex
+        align-items center
+        .avatar
+          width 60px
+          img
+            width 40px
+            height 40px
+            border-radius 50%
+        .cart-detail
+          flex 1
+          p:nth-of-type(1)
+            color #000
+            line-height 20px
+          p:nth-of-type(2)
+            color #f01414
+            line-height 20px
+        .lost
+          width 46px
+          height 28px
+          line-height 28px
+          background #DCD036;
+          box-shadow 0 2px 6px 0 rgba(0,0,0,0.10)
+          border-radius 14px
+          text-align center
+          a
+            color: #FFFFFF;
+            text-align: center;
+    .user
+      margin-top 10px
+      padding 0 20px
+      display flex
+      .avatar
+        width 60px
+        img
+          width 40px
+          height 40px
+          border-radius 50%
+      .info
+        .f12
+          color #8a8a8f
+          line-height 20px
+    .separator
+      white-space nowrap
+      overflow hidden
+      margin-top 10px
+      span
+        display inline-block
+        width 14px
+        height 3px
+        margin-right 3px
+        background-color red
+        transform skewX(-45deg)
+        &:nth-of-type(even)
+          background-color #2689ed
+        &:nth-of-type(odd)
+          background-color #d2335c
+    .input-info
+      padding 10px 20px 0
+      line-height 20px
+      div
+        &:last-child
+          display flex
+          input
+            flex 1
+            background #fff
+            border 1px solid #f60
+            border-radius 6px
+        span
+          display inline-block
+          &:nth-of-type(1)
+            width 70px
+    .detail
+      padding 0 20px 10px
+      border-bottom 1px solid #E8E8E8
+      &>div
+        display flex
+        margin-top 10px
+        line-height 16px
+        span
+          &:nth-of-type(1)
+            width 30%
+          &:nth-of-type(2)
+            width 30%
+          &:nth-of-type(3)
+            width 40%
+            text-align right
+          &.freight
+            color #f01414
+        .cube-input
+          height 24px
+          .cube-input-field
+            font-size 12px
+    .total
+      padding 10px 20px
+      display flex
+      justify-content space-between
+      .f16
+        font-weight bold
+      .f14
+        color #f01414
+  .confirm-btn-wrapper
+    width 100%
+    position fixed
+    bottom 0
+    height 50px
+    line-height 50px
+    background-color #10a327
+    text-align center
+    display flex
+    &.disabled
+      background-color #666
+    .text, .no-text, .yes-text
+      color #fff
+    .text-wrapper
+      flex 1
+      display flex
+      .no-text
+        width 35%
+        background-color #D5283D
+      .yes-text
+        width 65%
+    .text
+      flex 1
+

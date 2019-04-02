@@ -1,0 +1,10 @@
+export const CURRENT_USER = 'CURRENT_USER';
+export const LOADING = 'LOADING';
+export const IMAGE_INFO = 'IMAGE_INFO';
+export const EncyListSearchName = 'Ency_List_Search_Name';
+export const BillAddNameDate = 'Bill_Add_Name_Date';
+export const GroupsInCurProvince = 'GROUPS_IN_CUR_PROVINCE';
+export const SetCurrentInfo = 'SET_CURRENT_INFO';
+export const SetUpdateInfo = 'SET_UPDATE_INFO';
+export const SetSearchHistory = 'SET_SEARCH_HISTORY';
+export const ClearSearchHistory = 'CLEAR_SEARCH_HISTORY';

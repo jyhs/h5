@@ -1,0 +1,64 @@
+@import "../../common/stylus/variable";
+
+.toast
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  z-index: 998
+  background-color: transparent
+  &.toast-fade-enter-active
+    animation: toast-fadein 0.3s
+    .toast-content
+      animation: toast-zoom 0.3s
+  .toast-wrapper
+    position: absolute
+    top: 20%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 999
+    .toast-content
+      width: 270px
+      height 50px
+      line-height 50px
+      text-align center
+      border-radius: 13px
+      background: $color-highlight-background
+      font-size 0
+      .icon
+        vertical-align top
+        font-size 26px
+        color: #fff
+      .text
+        vertical-align top
+        text-align: center
+        font-size: $font-size-large
+        color: #fff
+      .operate
+        display: flex
+        align-items: center
+        text-align: center
+        font-size: $font-size-large
+        .operate-btn
+          flex: 1
+          line-height: 22px
+          padding: 10px 0
+          border-top: 1px solid $color-background-d
+          color: #fff
+          &.left
+            border-right: 1px solid $color-background-d
+
+@keyframes toast-fadein
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes toast-zoom
+  0%
+    transform: scale(0)
+  50%
+    transform: scale(1.1)
+  100%
+    transform: scale(1)

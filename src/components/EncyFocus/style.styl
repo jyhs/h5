@@ -1,0 +1,98 @@
+@import "../../common/stylus/mixin.styl";
+
+.ency-focused-container
+  container()
+  &.slide-enter-active, &.slide-leave-active
+    transition 0.3s
+  &.slide-enter, &.slide-leave-to
+    transform translate3d(100%, 0, 0)
+  .content-wrapper
+    scroll-wrapper()
+    .types
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .type
+        width: 0.55rem;
+        height: 0.2rem;
+        line-height: 0.2rem;
+        margin: 0.05rem 0.09rem 0;
+        background-color: #fff;
+        color: #28b1ea;
+        text-align: center;
+        border: 0.01rem solid #39B7F9;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border-radius: 6px;
+      .type-active 
+        background-color: #28b1ea;
+        color: #fff;
+    .block-content
+      width: 100%;
+      padding: 0.05rem 0.05rem 0 0.05rem;
+      box-sizing: border-box;
+      .content-main
+        background: #fff;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.10);
+        border-radius: 4px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      .ency-content-main
+        height: 0.88rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .pic
+          margin: 0.1rem;
+          img
+            width: 0.88rem;
+            height: 0.64rem;
+            border-radius: 5px;
+        .info
+          flex: 1;
+          height: 100%;
+          box-sizing: border-box;
+          padding: 0.1rem 0.1rem 0.1rem 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          .name-price
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .ency-price
+              .price-title
+                color: #cbcbcb;
+              .price-text
+                color: #f5a623;
+          .tags
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .tag
+              margin-right: 5px;
+              span
+                color: #9b9b9b;
+          .others
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .diff
+              font-size 10px
+            .actions
+              display: flex;
+              flex-direction: row;
+              .action
+                margin-left: 0.05rem;
+                display: flex;
+                align-items: center;
+                .focused
+                  color: #f5a623;
+                img
+                  vertical-align: middle;
+                span
+                  color: #9b9b9b;
+    .no-result-wrapper
+      no-result-wrapper()

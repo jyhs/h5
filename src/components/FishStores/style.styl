@@ -1,0 +1,64 @@
+@import "../../common/stylus/mixin.styl";
+
+.fish-stores-container
+  container()
+  &.slide-enter-active, &.slide-leave-active
+    transition 0.3s
+  &.slide-enter, &.slide-leave-to
+    transform translate3d(100%, 0, 0)
+  .button-tab
+    margin-top: 0.45rem;
+    padding: 0.05rem 0.05rem 0;
+    .vux-button-group > a
+      color: #ccc;
+      box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.06);
+      border-radius: 4px;
+    .vux-button-group > a
+      background-color: #fafafa;
+    .vux-button-group > a.vux-button-group-current
+      background-color: #fff;
+      color: #28b1ea;
+      font-size: 14px;
+    .vux-button-group > a.vux-button-tab-item-first:after
+      border: none;
+    .vux-button-group > a.vux-button-tab-item-last:after
+      border: none;
+  .content-wrapper
+    scroll-wrapper(90px)
+    .block-content
+      width: 100%;
+      padding: 0.05rem 0.05rem 0 0.05rem;
+      box-sizing: border-box;
+      .content-main
+        background: #fff;
+        height: 1.06rem;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.10);
+        border-radius: 4px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .avatar
+          padding: 0 0.1rem;
+          img
+            width: 0.82rem;
+            height: 0.86rem;
+            vertical-align: middle;
+            border-radius: 5px;
+        .info
+          flex: 1;
+          height: 100%;
+          box-sizing: border-box;
+          padding: 0.1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          .info-item
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .name
+              color: #000;
+              font-weight: 300;
+              line-height: 0.2rem;
+    .no-result-wrapper
+      no-result-wrapper()

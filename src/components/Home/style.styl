@@ -1,0 +1,97 @@
+@import "../../common/stylus/variable";
+
+.home >>> .vux-indicator
+  line-height 4px
+.home
+  position: fixed
+  width: 100%
+  top: 0
+  bottom: 60px
+  z-index 200
+  .vux-swiper-item
+    img
+      width: 100%;
+  .home-content
+    height: 100%
+    overflow: hidden
+    .slider-wrapper
+      position: relative
+      width: 100%
+      overflow: hidden
+      .vux-indicator-right
+        right 50%
+        bottom -10px
+        transform translateX(50%)
+    .city-selector
+      width: 100%;
+      height: 0.35rem;
+      line-height: 0.35rem;
+      position relative
+      .wrapper
+        position absolute
+        right 0
+        top 0
+        font-size: 0.14rem;
+        .el-icon-coral-coordinates
+          position: relative;
+          left: 5px;
+        .el-icon-coral-biaotou-daoxu
+          position: relative;
+          top: 3px;
+    .tab-icons
+      width: 100%;
+      height: 0.95rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      font-size 14px;
+      .tab-icon
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img
+          width: 0.48rem;
+          height: 0.48rem;
+          margin-bottom: 0.08rem;
+        span
+          color: #adadad;
+    .block
+      margin-top 10px
+      width: 100%;
+      font-size 14px;
+      .block-title
+        width: 100%;
+        height: 0.24rem;
+        font-size 15px;
+        margin-top: 0.03rem;
+        line-height: 0.24rem;
+        .rect
+          padding: 9px 3px;
+          width: 0;
+          font-size: 0;
+          background-color: #84daef;
+          position: relative;
+          top: -5px;
+          margin-left: 0.10rem;
+        .title-text
+          margin-left: 0.05rem;
+          color #000
+      .has-no-active
+        width: 100%;
+        height: 0.4rem;
+        line-height: 0.4rem;
+        text-align: center;
+        span
+          color: #666;
+          .link
+            color: #84daef;
+    .loading-container
+      position: absolute
+      width: 100%
+      top: 50%
+      transform: translateY(-50%)
+  .dialog-content-wrapper
+    img
+      width 100%
+      vertical-align top

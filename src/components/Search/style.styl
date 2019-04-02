@@ -1,0 +1,32 @@
+@import "../../common/stylus/variable";
+@import "../../common/stylus/mixin";
+
+.search
+  container()
+  .search-box-wrapper
+    margin: 0.1rem
+  .shortcut-wrapper
+    position: fixed
+    top: 55px
+    bottom: 60px
+    width: 100%
+    .shortcut
+      .search-history
+        position: relative
+        margin: 0 0.1rem
+        .title
+          display: flex
+          align-items: center
+          height: 40px
+          color: $color-text-l
+          .text
+            flex: 1
+          .clear
+            extend-click()
+      .no-result-wrapper
+        margin-top 100px
+  .search-result
+    position: fixed
+    width: 100%
+    top: 55px
+    bottom: 60px

@@ -1,0 +1,58 @@
+@import "../../common/stylus/mixin.styl";
+
+.cart-admin-container
+  container(#fff)
+  z-index 300
+  &.slide-enter-active, &.slide-leave-active
+    transition 0.3s
+  &.slide-enter, &.slide-leave-to
+    transform translate3d(100%, 0, 0)
+  .content-wrapper
+    scroll-wrapper()
+    padding 0 0.05rem
+    .block-content 
+      height: 1.0rem;
+      background-color: #fff;
+      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.10);
+      border-radius: 4px;
+      padding: 0.05rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .weui-cell 
+        padding: 0;
+      .weui-cell:before 
+        border: none;
+      .vux-number-input 
+        font-size: 15px;
+      .img-container 
+        width: 1.1rem;
+        height: 0.8rem;
+        border-radius: 0.05rem;
+        overflow: hidden;
+        img 
+          width: 1.1rem;
+          height: 0.8rem;
+          vertical-align: middle;
+      .info 
+        flex: 1;
+        height: 100%;
+        margin-left: 0.1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .name 
+          color: #4a4a4a;
+          line-height: 30px;
+        .size
+          color: #8a8a8a;
+          line-height: 20px;
+        .info-seg
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items center
+          .price, .count
+            color: #ff9f00;
+            line-height: 20px;

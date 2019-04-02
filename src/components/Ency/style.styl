@@ -1,0 +1,122 @@
+@import "../../common/stylus/mixin.styl";
+
+.ency
+  container(#fff, 0, 60px)
+  color #000
+  display flex
+  .menu-wrapper
+    flex: 0 0 80px
+    width 80px
+    background #f4f4f4
+    overflow hidden
+    .menu-item
+      width 80px
+      .title
+        line-height 36px
+        color #999
+        text-align center
+      .sub-menu-wrapper
+        .sub-menu-item
+          line-height 28px
+          text-indent 1em
+          border-bottom 1px solid #e5e5e5
+          color #606060
+          no-wrap()
+          &.current
+            background #3FC6FF
+            color #fff
+      &.active
+        position relative
+        margin-top -1px
+        z-index 10
+        .title
+          background #fff
+          color #218ad9
+          font-weight bold
+          border-bottom 1px solid #218ad9
+          border-none()
+        .sub-menu-wrapper
+          background #fff
+      .icon
+        display inline-block
+        width 12px
+        height 12px
+        vertical-align top
+        margin-right 2px
+        background-size 12px 12px
+        background-repeat no-repeat
+      .text
+        vertical-align middle
+        border-1px(rgba(7, 17, 27, 0.1))
+        font-size 12px
+  .details-wrapper
+    flex 1
+    overflow hidden
+    .block-content
+      width: 100%;
+      padding: 0.05rem 0.05rem 0 0.05rem;
+      box-sizing: border-box;
+      .activeBg
+        background: #f4ffee !important;
+      .content-main
+        background: #fff;
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.10);
+        border-radius: 4px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      .ency-content-main
+        min-height 0.88rem
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .pic
+          margin: 0.1rem;
+          img
+            width: 0.88rem;
+            height: 0.64rem;
+            border-radius: 5px;
+        .info
+          flex: 1;
+          min-height: 0.88rem;
+          box-sizing: border-box;
+          padding: 0.1rem 0.1rem 0.1rem 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .name-price
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .ency-price
+              .price-title
+                color: #cbcbcb;
+              .price-text
+                color: #f5a623;
+          .tags
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .tag
+              margin-right: 5px;
+              span
+                color: #9b9b9b;
+          .others
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .diff
+              font-size 10px
+            .actions
+              display: flex;
+              flex-direction: row;
+              .action
+                margin-left: 0.05rem;
+                display: flex;
+                align-items: center;
+                .focused
+                  color: #f5a623;
+                img
+                  vertical-align: middle;
+                span
+                  color: #9b9b9b;
