@@ -1,19 +1,19 @@
 <template>
     <transition name="slide">
         <div class="group-shop-container">
-            <m-header :title="group.name">
+            <!-- <m-header>
                 <span class="el-icon-coral-search f20" @click="onClickSearch" v-if="!isSearching"></span>
                 <span class="el-icon-coral-undo f20" @click="onClickUndo" v-else></span>
-            </m-header>
+            </m-header> -->
             <div class="content-wrapper" :style="{bottom: group.status === 1 ? '46px': 0}">
-                <div class="search-box-wrapper" ref="searchBoxWrapper" v-if="isSearching">
+                <div class="search-box-wrapper" ref="searchBoxWrapper">
                     <search-box ref="searchBox"
                                 @query="onQueryChange"
                                 @focus="onSearchFocus"
                                 @blur="onSearchBlur"
                     ></search-box>
                 </div>
-                <div class="info-wrapper" ref="infoWrapper" v-if="!isSearching">
+                <div class="info-wrapper" ref="infoWrapper" >
                     <div class="info">
                         <div>
                             <span class="column f12">

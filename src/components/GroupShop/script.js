@@ -10,6 +10,7 @@ import Toast from '../../base/Toast/index';
 import NoResult from '../../base/NoResult/index';
 import {CommonMixin, PathMixin} from '../../common/mixin';
 import {SmallImageBasePath, FileBasePath} from '../../constants';
+import {saveCurrentInfo} from '../../common/util/cache';
 
 export default {
     mixins: [
@@ -78,24 +79,21 @@ export default {
             return !this.loading && !this.details.length && !this.focused;
         }
     },
-    async created() {
-        const {groupId} = this.$route.params;
-        this.previousId = groupId;
-        this.$setgoindex();
-        await this.initData(groupId);
-        await this.initCart();
-        await this._initWxShare(groupId);
-    },
     async activated() {
-        const {groupId} = this.$route.params;
-        if (this.previousId === groupId) {
-            return;
+        const {groupId, token, userId, province, provinceName} = this.$route.query;
+        const info = {
+            userId: userId,
+            auth: token,
+            noticeId: 1,
+            province: province,
+            provinceName: provinceName
         }
+        localStorage.setItem('auth', token);
+        saveCurrentInfo(info);
         this.previousId = groupId;
         this.$setgoindex();
         await this.initData(groupId);
         await this.initCart();
-        await this._initWxShare(groupId);
     },
     methods: {
         ...mapActions([
@@ -112,13 +110,14 @@ export default {
         async initData(groupId) {
             this.loading = true;
             this.group = await this.getGroupById({groupId});
+
             this.menus = await this.getCategoriesByBillId({
                 billId: this.group.bill_id
             });
             this.allDetails = await this.getDetailsByBillId({
                 billId: this.group.bill_id,
                 page: 1,
-                size: 1000
+                size: 200
             });
             if (this.menus && this.menus[0]) {
                 this.currentType = this.menus[0].code;
@@ -130,7 +129,7 @@ export default {
             }, 20);
         },
         async initCart() {
-            const {groupId} = this.$route.params;
+            const {groupId} = this.$route.query;
             if (this.userHasLogin()) {
                 this.cart = await this.getActiveCart({
                     groupId: groupId
@@ -224,6 +223,10 @@ export default {
         confirmToLogin() {
             this.toPath('/user/entry');
         },
+        toPath() {
+            const {groupId} = this.$route.query;
+            wx.miniProgram.navigateTo({url: '/pages/group/mall/main?groupId=' + groupId + '&cartId=' + this.cart.id});
+        },
         toEncyDetail(item) {
             if (item.material_id) {
                 this.toPath(`/ency/${item.material_id}/detail`);
@@ -292,7 +295,7 @@ export default {
             return true;
         },
         async _addCart() {
-            const {groupId} = this.$route.params;
+            const {groupId} = this.$route.query;
             try {
                 this.cart = await this.addCart({
                     groupId,
@@ -306,7 +309,7 @@ export default {
             const result = (await this.getDetailsByCartId({
                 cartId: this.cart.id,
                 page: 1,
-                size: 1000
+                size: 200
             })).data;
             const detailIds = result.map(item => item['bill_detail_id']);
             const detailMap = {};

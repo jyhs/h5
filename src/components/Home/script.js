@@ -129,34 +129,34 @@ export default {
         },
         async fetchProvinceAds(code) {
             this.provinceAdList = [];
-            try {
-                const response = await this.getAdByProvinceCode({province: code});
-                const adNum = Number(response.ad_num);
-                for (let i = 0; i < adNum; i++) {
-                    this.provinceAdList.push({
-                        id: `${code}${i + 1}`,
-                        url: 'javascript: void(0);',
-                        img: `${FileBasePath}/image/ad/${code}/${i + 1}.jpg?r=${Math.random()}`,
-                        bigImg: `${FileBasePath}/image/ad/${code}/${i + 1}_big.jpg?r=${Math.random()}`
-                    });
-                }
-            } catch (e) {
-                console.log(e);
-            }
+            // try {
+            //     const response = await this.getAdByProvinceCode({province: code});
+            //     const adNum = Number(response.ad_num);
+            //     for (let i = 0; i < adNum; i++) {
+            //         this.provinceAdList.push({
+            //             id: `${code}${i + 1}`,
+            //             url: 'javascript: void(0);',
+            //             img: `${FileBasePath}/image/ad/${code}/${i + 1}.jpg?r=${Math.random()}`,
+            //             bigImg: `${FileBasePath}/image/ad/${code}/${i + 1}_big.jpg?r=${Math.random()}`
+            //         });
+            //     }
+            // } catch (e) {
+            //     console.log(e);
+            // }
         },
         async fetchNotice({noticeId = 0}) {
-            const response = await this.checkNotice({noticeId});
-            const {checked} = response;
-            if (checked) {
-                const imageResponse = await this.getNoticeImage();
-                const {notice_id, notice_file} = imageResponse;
-                this.dialogImage = notice_file;
-                this.dialogClosable = false;
-                this.dialogHideOnBlur = false;
-                this._setCurrentInfo({
-                    noticeId: notice_id
-                });
-            }
+            // const response = await this.checkNotice({noticeId});
+            // const {checked} = response;
+            // if (checked) {
+            //     const imageResponse = await this.getNoticeImage();
+            //     const {notice_id, notice_file} = imageResponse;
+            //     this.dialogImage = notice_file;
+            //     this.dialogClosable = false;
+            //     this.dialogHideOnBlur = false;
+            //     this._setCurrentInfo({
+            //         noticeId: notice_id
+            //     });
+            // }
         },
         async hasReadNotice() {
             this.$refs.imageDialog.hide();

@@ -29,7 +29,7 @@ export const CommonMixin = {
             return `${year}-${month}-${day} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
         },
         userHasLogin() {
-            return !!this.currentInfo.userId;
+            return !!localStorage.getItem('auth');
         },
         async handleFocusEncy(ency) {
             if (this.userHasLogin()) {

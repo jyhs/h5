@@ -13,7 +13,7 @@ import ToastPlugin from './plugins/Toast';
 import MaskPlugin from './plugins/Mask';
 import router from './router';
 import store from './store';
-import {loadCurrentInfo} from './common/util/cache';
+// import {loadCurrentInfo} from './common/util/cache';
 import 'quill/dist/quill.core.css';
 import 'quill/dist/quill.snow.css';
 import './common/fonts/iconfont.css';
@@ -47,24 +47,24 @@ Vue.prototype.$setgoindex = function () {
 };
 
 router.beforeEach((to, from, next) => {
-    const currentInfo = loadCurrentInfo();
-    wx.miniProgram.postMessage({
-        data: {
-            param: `type=home&shareId=${currentInfo.userId}`,
-            shareUserId: currentInfo.userId || 0,
-            auth: currentInfo.auth || 0,
-            title: `礁岩海水`,
-            imageUrl: `https://static.huanjiaohu.com/image/share/default.jpg?r=${Math.random()}`
-        }
-    });
+    // const currentInfo = loadCurrentInfo();
+    // wx.miniProgram.postMessage({
+    //     data: {
+    //         param: `type=home&shareId=${currentInfo.userId}`,
+    //         shareUserId: currentInfo.userId || 0,
+    //         auth: currentInfo.auth || 0,
+    //         title: `礁岩海水`,
+    //         imageUrl: `https://static.huanjiaohu.com/image/share/default.jpg?r=${Math.random()}`
+    //     }
+    // });
     next();
 });
 
 // http request 拦截器
 Axios.interceptors.request.use(
     config => {
-        const currentInfo = loadCurrentInfo();
-        config.headers.Authorization = currentInfo.auth;
+        // const currentInfo = loadCurrentInfo();
+        config.headers.Authorization = localStorage.getItem('auth');
         Vue.$vux.mask.show();
         return config;
     },
