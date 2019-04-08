@@ -5,7 +5,7 @@
                 <span class="el-icon-coral-search f20" @click="onClickSearch" v-if="!isSearching"></span>
                 <span class="el-icon-coral-undo f20" @click="onClickUndo" v-else></span>
             </m-header> -->
-            <div class="content-wrapper" :style="{bottom: group.status === 1 ? '46px': 0}">
+            <div class="content-wrapper" :style="{top:0}">
                 <div class="search-box-wrapper" ref="searchBoxWrapper">
                     <search-box ref="searchBox"
                                 @query="onQueryChange"
@@ -13,7 +13,7 @@
                                 @blur="onSearchBlur"
                     ></search-box>
                 </div>
-                <div class="info-wrapper" ref="infoWrapper" >
+                <div class="info-wrapper" ref="infoWrapper_BAN" >
                     <div class="info">
                         <div>
                             <span class="column f12">
