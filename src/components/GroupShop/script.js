@@ -311,6 +311,7 @@ export default {
                 page: 1,
                 size: 200
             })).data;
+
             const detailIds = result.map(item => item['bill_detail_id']);
             const detailMap = {};
             for (let item of result) {
@@ -328,6 +329,11 @@ export default {
                     this.$set(detail, 'groupId', this.group.id);
                 }
             });
+            if (this.details && this.details.length >= 7) {
+                this.details.push({});
+                this.details.push({});
+                this.details.push({});
+            }
         },
         _initWxShare(groupId) {
             wx.miniProgram.postMessage({

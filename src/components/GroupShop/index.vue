@@ -5,7 +5,7 @@
                 <span class="el-icon-coral-search f20" @click="onClickSearch" v-if="!isSearching"></span>
                 <span class="el-icon-coral-undo f20" @click="onClickUndo" v-else></span>
             </m-header> -->
-            <div class="content-wrapper" :style="{top:0}">
+            <div class="content-wrapper" style="top:0">
                 <div class="search-box-wrapper" ref="searchBoxWrapper">
                     <search-box ref="searchBox"
                                 @query="onQueryChange"
@@ -83,14 +83,14 @@
                                             <span>{{item.name}}</span>
                                             <span class="ency-size f12">{{item.size}}</span>
                                         </span>
-                                        <span class="ency-price">￥{{item.price}}</span>
+                                        <span class="ency-price" v-if="item.price">￥{{item.price}}</span>
                                         </div>
                                         <div class="others">
                                             <div>
                                                 <badge v-if="item.recommend === 'tj'" text="推荐"></badge>
                                                 <badge v-if="item.recommend === 'tej'" text="特价"></badge>
                                             </div>
-                                            <div class="cart-control-wrapper">
+                                            <div class="cart-control-wrapper" v-if="item.price">
                                                 <cart-control :detail="item"
                                                               @cartAdd="cartAdd"
                                                               @cartDecrease="cartDecrease"
