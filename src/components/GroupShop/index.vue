@@ -73,7 +73,7 @@
                     >
                         <ul>
                             <li class="block-content" v-for="item in details" :key="item.id">
-                                <div class="content-main ency-content-main">
+                                <div :class="item.price?'content-main ency-content-main':'content-main ency-content-main empty'">
                                     <div class="pic">
                                         <img v-lazy="item.encyImage" alt="生物图片" @click="toEncyDetail(item)">
                                     </div>
@@ -126,4 +126,11 @@
     </transition>
 </template>
 <script type="text/ecmascript-6" src="./script.js"></script>
+<style>
+ .empty{
+                background: #ffffff!important;
+                box-shadow: none!important;
+ }
+</style>
+
 <style scoped lang="stylus" src="./style.styl"></style>
