@@ -74,10 +74,10 @@
                         <ul>
                             <li class="block-content" v-for="item in details" :key="item.id">
                                 <div :class="item.price?'content-main ency-content-main':'content-main ency-content-main empty'">
-                                    <div class="pic">
+                                    <div class="pic" v-if="item.price">
                                         <img v-lazy="item.encyImage" alt="生物图片" @click="toEncyDetail(item)">
                                     </div>
-                                    <div class="detail-info">
+                                    <div class="detail-info" v-if="item.price">
                                         <div class="name-price">
                                         <span class="ency-name f14">
                                             <span>{{item.name}}</span>
