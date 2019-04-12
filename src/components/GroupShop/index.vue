@@ -13,7 +13,7 @@
                                 @blur="onSearchBlur"
                     ></search-box>
                 </div>
-                <div class="info-wrapper" ref="infoWrapper_BAN" >
+                <div class="info-wrapper" ref="infoWrapper" >
                     <div class="info">
                         <div>
                             <span class="column f12">

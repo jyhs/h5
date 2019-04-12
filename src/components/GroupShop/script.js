@@ -229,7 +229,7 @@ export default {
         },
         toEncyDetail(item) {
             if (item.material_id) {
-                this.toPath(`/ency/${item.material_id}/detail`);
+                wx.miniProgram.navigateTo({url: '/pages/catalog/material/main?id=' + item.material_id});
             } else {
                 this.$refs.toast.show({
                     type: 'warning',
